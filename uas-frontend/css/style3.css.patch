@@ -1,0 +1,21 @@
+background-color: #7a5a2b;
+  border: solid;
+}
+=======
+
+.login-box .btn:hover {
+  background-color: #7a5a2b;
+  border: solid;
+}
+
+/* Responsive for mobile: 2 cards per row */
+@media (max-width: 600px) {
+    .list .row .menu-card {
+        flex: 1 1 48%;
+        max-width: 48%;
+        margin: 0 1% 2rem 1%;
+    }
+    .list .row .menu-card img {
+        width: 80%;
+    }
+}

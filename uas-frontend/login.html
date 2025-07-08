@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+     <!-- Font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Icon -->
+     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- stylemy -->
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/style3.css">
+</head>
+<body>
+
+<!-- Selamat datang start-->
+    <section class="nama" id="nama">
+        <main class="content">
+        <h1>SELAMAT <span>DATANG</span></h1>
+        </main>
+    </section>
+<!-- Selamat datang end-->
+
+<!-- Login Box start-->
+ <form id="loginForm" action="#" method="POST">
+    <div class="login-box">
+        <div class="login header">
+            <header>LOGIN</header>
+        </div>
+        <div class="input-box">
+            <input id="username" type="text" name="username" class="input-field" placeholder="username">
+            <input id="password" type="password" name="password" class="input-field" placeholder="password">
+        </div>
+        <div class="forgot">
+            <input type="checkbox" class="checklist" id="check">
+            <label for="check">Remember me</label>
+            <a href="#">Forgot Password</a>
+        </div>
+        <div>
+            <button class="btn" type="submit">MASUK</button>
+        </div>
+        <div style="text-align:center; margin-top: 15px;">
+            <a href="registration.html" style="color: #5b4025; font-weight: 500; text-decoration: none;">Belum punya akun? Daftar di sini</a>
+        </div>
+    </div>
+  </form>
+<!-- Login box end -->
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+
+  const res = await fetch('http://localhost:3000/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  });
+
+  const data = await res.json();
+  if (data.success) {
+    window.location.href = 'dasboard.html';
+  }
+});
+</script>
+</body>
+</html>
