@@ -201,6 +201,7 @@ body{
 .about .row .content p{
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
+    text-align: justify;
     font-weight: 100;
     line-height: 1.6;
 }
